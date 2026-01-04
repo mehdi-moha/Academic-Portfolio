@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <MCUWorkspace Schema="67" Class="CMCUWorkspace" Path="" PathAbs="" MCUType="1" ActiveProjectIndex="0">
 <MCUProjects>
-<ProjectItem ProjectPath="&amp;ASCDigital_Clock\Digital_Clock.mcuprj" ProjectPathAbs="&amp;ASCD:\Digital_Clock\Digital_Clock\Digital_Clock\Digital_Clock.mcuprj"/>
+<ProjectItem ProjectPath="&amp;ASCDigital_Clock\Digital_Clock.mcuprj" ProjectPathAbs="&amp;ASCC:\Digital_Clock\Digital_Clock\Digital_Clock\Digital_Clock.mcuprj"/>
 </MCUProjects>
 </MCUWorkspace>

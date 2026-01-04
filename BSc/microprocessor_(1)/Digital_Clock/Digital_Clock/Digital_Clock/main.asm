@@ -102,7 +102,7 @@ BIN_TO_BCD:
     RET
 
 ; ------------------------------------
-; External Interrupt 0 – Reset Minutes
+; External Interrupt 0 ??? Reset Minutes
 ; ------------------------------------
 ORG 0200H
 INT0_MIN_RESET:
@@ -133,7 +133,7 @@ RETURN_INT0:
     RETI
 
 ; ------------------------------------
-; External Interrupt 1 – Reset Hours
+; External Interrupt 1 ??? Reset Hours
 ; ------------------------------------
 ORG 0250H
 INT1_HOUR_RESET:

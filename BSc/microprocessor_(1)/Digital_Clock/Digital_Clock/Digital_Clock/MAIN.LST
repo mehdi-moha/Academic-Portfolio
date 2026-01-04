@@ -106,7 +106,7 @@
 00A1 22              102        RET
                      103    
                      104    ; ------------------------------------
-                     105    ; External Interrupt 0 – Reset Minutes
+                     105    ; External Interrupt 0 ??? Reset Minutes
                      106    ; ------------------------------------
 0200                 107    ORG 0200H
 0200                 108    INT0_MIN_RESET:
@@ -139,7 +139,7 @@
 0227 32              133        RETI
                      134    
                      135    ; ------------------------------------
-                     136    ; External Interrupt 1 – Reset Hours
+                     136    ; External Interrupt 1 ??? Reset Hours
                      137    ; ------------------------------------
 0250                 138    ORG 0250H
 0250                 139    INT1_HOUR_RESET:
