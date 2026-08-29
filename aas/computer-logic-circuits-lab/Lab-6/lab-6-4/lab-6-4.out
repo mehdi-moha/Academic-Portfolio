@@ -1,0 +1,178 @@
+
+**** 06/02/05 15:40:14 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-6\lab-6-4\lab-6-4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Jun 02 15:36:18 2005
+
+
+
+** Analysis setup **
+.tran 1ms 8ms
+.OP 
+.STMLIB "H:\Lab-6\lab-6-4\lab-6-4.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-6-4.net"
+
+**** INCLUDING lab-6-4.net ****
+* Schematics Netlist *
+
+
+
+X_U1         $D_LO A0 A1 A2 $D_LO $D_HI $D_HI $D_LO $D_HI $D_LO $D_LO $D_HI F
++  $N_0001 $G_DPWR $G_DGND 74151A PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND A0 IO_STM STIMULUS=S0
+U_DSTM2         STIM(1,0) $G_DPWR $G_DGND A1 IO_STM STIMULUS=S1
+U_DSTM3         STIM(1,0) $G_DPWR $G_DGND A2 IO_STM STIMULUS=S2
+
+**** RESUMING lab-6-4.cir ****
+.INC "lab-6-4.als"
+
+
+
+**** INCLUDING lab-6-4.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U1            U1(Ebar=$D_LO S0=A0 S1=A1 S2=A2 I0=$D_LO I1=$D_HI I2=$D_HI
++  I3=$D_LO I4=$D_HI I5=$D_LO I6=$D_LO I7=$D_HI Z=F Zbar=$N_0001 PWR=$G_DPWR
++  GND=$G_DGND )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=A0 )
+U_DSTM2          DSTM2(PWR=$G_DPWR GND=$G_DGND OUT0=A1 )
+U_DSTM3          DSTM3(PWR=$G_DPWR GND=$G_DGND OUT0=A2 )
+_    _(F=F)
+_    _(A0=A0)
+_    _(A1=A1)
+_    _(A2=A2)
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING lab-6-4.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-6\lab-6-4\lab-6-4.stl written on Tue May 31 15:09:11 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! S0 Digital S1 Digital S2 Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 8ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS S0 STIM (1, 1)
++   +0s 0
++   1ms 1
++   2ms 0
++   3ms 1
++   4ms 0
++   5ms 1
++   6ms 0
++   7ms 1
+.STIMULUS S1 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+.STIMULUS S2 STIM (1, 1)
++   +0s 0
++   4ms 1
+.STIMULUS S0 STIM (1, 1)
++   +0s 0
++   1ms 1
++   2ms 0
++   3ms 1
++   4ms 0
++   5ms 1
++   6ms 0
++   7ms 1
+.STIMULUS S1 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+
+**** 06/02/05 15:40:14 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-6\lab-6-4\lab-6-4.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 06/02/05 15:40:14 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-6\lab-6-4\lab-6-4.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.511000E-09 
+      TSWHL2                    1.487000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.517000E-09 
+      TSWLH2                    3.564000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .06
+

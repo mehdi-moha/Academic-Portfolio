@@ -1,0 +1,142 @@
+
+**** 05/31/05 18:09:22 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-1\lab-1-1\lab-1-1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 28 17:32:06 2005
+
+
+
+** Analysis setup **
+.tran 1ms 6ms
+.OP 
+.STMLIB "H:\Lab-1\lab-1-1\lab-1-1.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-1-1.net"
+
+**** INCLUDING lab-1-1.net ****
+* Schematics Netlist *
+
+
+
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND Input IO_STM STIMULUS=Input
+X_U1A         Input Output $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING lab-1-1.cir ****
+.INC "lab-1-1.als"
+
+
+
+**** INCLUDING lab-1-1.als ****
+* Schematics Aliases *
+
+.ALIASES
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=Input )
+X_U1A           U1A(A=Input Y=Output PWR=$G_DPWR GND=$G_DGND )
+_    _(Input=Input)
+_    _(Output=Output)
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+.ENDALIASES
+
+
+**** RESUMING lab-1-1.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-1\lab-1-1\lab-1-1.stl written on Sat May 28 17:17:55 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! Input Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 6ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS Input STIM (1, 1)
++   +0s 1
++   2ms 0
++   4ms Z
+
+**** 05/31/05 18:09:22 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-1\lab-1-1\lab-1-1.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_04            
+      TPLHMN    4.800000E-09 
+      TPLHTY   12.000000E-09 
+      TPLHMX   22.000000E-09 
+      TPHLMN    3.200000E-09 
+      TPHLTY    8.000000E-09 
+      TPHLMX   15.000000E-09 
+
+
+**** 05/31/05 18:09:22 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-1\lab-1-1\lab-1-1.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.511000E-09 
+      TSWHL2                    1.487000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.517000E-09 
+      TSWLH2                    3.564000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .44
+

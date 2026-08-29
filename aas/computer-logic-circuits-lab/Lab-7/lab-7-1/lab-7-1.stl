@@ -1,0 +1,19 @@
+* H:\Lab-7\lab-7-1\lab-7-1.stl written on Mon May 30 16:47:17 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! A1 Digital A0 Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 8ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS A1 STIM (1, 1)
++   +0s 0
++   4ms 1
+.STIMULUS A0 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1

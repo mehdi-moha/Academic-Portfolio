@@ -1,0 +1,19 @@
+* H:\Lab-2\Q-2\nand-xor\xor.stl written on Fri May 27 15:40:33 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! A0 Digital A1 Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 8ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS A0 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+.STIMULUS A1 STIM (1, 1)
++   +0s 0
++   4ms 1

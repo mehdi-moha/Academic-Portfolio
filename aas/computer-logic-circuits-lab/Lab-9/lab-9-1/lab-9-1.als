@@ -1,0 +1,18 @@
+* Schematics Aliases *
+
+.ALIASES
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=$N_0001 )
+U_DSTM2          DSTM2(PWR=$G_DPWR GND=$G_DGND OUT0=$N_0002 )
+X_U1            U1(CLK=$N_0002 UP/DOWN=$N_0001 BIN/DEC=$D_LO CINbar=$D_LO
++  PSEN=$D_LO JAM1=$D_LO JAM2=$D_LO JAM3=$D_LO JAM4=$D_LO Q1=O1 Q2=O2 Q3=O3 Q4=O4
++  COUTbar=$N_0004 VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS )
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+_    _(O1=O1)
+_    _(O2=O2)
+_    _(O3=O3)
+_    _(O4=O4)
+_    _($G_CD4000_VDD=$G_CD4000_VDD)
+_    _($G_CD4000_VSS=$G_CD4000_VSS)
+.ENDALIASES
+

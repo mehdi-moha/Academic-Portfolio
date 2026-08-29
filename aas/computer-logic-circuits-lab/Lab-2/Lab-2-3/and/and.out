@@ -1,0 +1,160 @@
+
+**** 05/28/05 07:27:20 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-2\Lab-2-3\and\and.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Fri May 27 13:27:30 2005
+
+
+
+** Analysis setup **
+.tran 1ms 8ms
+.OP 
+.STMLIB "H:\Lab-2\Lab-2-3\and\and.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "and.net"
+
+**** INCLUDING and.net ****
+* Schematics Netlist *
+
+
+
+X_U3A         $N_0001 $N_0002 F $G_DPWR $G_DGND 74AS02 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1A         A0 A0 $N_0001 $G_DPWR $G_DGND 74AS02 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U2A         A1 A1 $N_0002 $G_DPWR $G_DGND 74AS02 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND A0 IO_STM STIMULUS=A0
+U_DSTM2         STIM(1,0) $G_DPWR $G_DGND A1 IO_STM STIMULUS=A1
+
+**** RESUMING and.cir ****
+.INC "and.als"
+
+
+
+**** INCLUDING and.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U3A           U3A(A=$N_0001 B=$N_0002 Y=F PWR=$G_DPWR GND=$G_DGND )
+X_U1A           U1A(A=A0 B=A0 Y=$N_0001 PWR=$G_DPWR GND=$G_DGND )
+X_U2A           U2A(A=A1 B=A1 Y=$N_0002 PWR=$G_DPWR GND=$G_DGND )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=A0 )
+U_DSTM2          DSTM2(PWR=$G_DPWR GND=$G_DGND OUT0=A1 )
+_    _(F=F)
+_    _(A0=A0)
+_    _(A1=A1)
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING and.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-2\Lab-2-3\and\and.stl written on Fri May 27 13:27:02 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! A0 Digital A1 Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 8ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS A0 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+.STIMULUS A1 STIM (1, 1)
++   +0s 0
++   4ms 1
+.STIMULUS A0 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+
+**** 05/28/05 07:27:20 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-2\Lab-2-3\and\and.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_02AS          
+      TPLHMN    1.000000E-09 
+      TPLHTY    2.750000E-09 
+      TPLHMX    4.500000E-09 
+      TPHLMN    1.000000E-09 
+      TPHLTY    2.750000E-09 
+      TPHLMX    4.500000E-09 
+
+
+**** 05/28/05 07:27:20 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-2\Lab-2-3\and\and.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_AS00         
+        DRVL    0              19.8          
+        DRVH    0              19.9          
+       AtoD1                 AtoD_AS00       
+       AtoD2                 AtoD_AS00_NX    
+       AtoD3                 AtoD_AS00       
+       AtoD4                 AtoD_AS00_NX    
+       DtoA1 DtoA_STM        DtoA_AS00       
+       DtoA2 DtoA_STM        DtoA_AS00       
+       DtoA3 DtoA_STM        DtoA_AS00       
+       DtoA4 DtoA_STM        DtoA_AS00       
+      TSWHL1                  298.000000E-12 
+      TSWHL2                  276.000000E-12 
+      TSWHL3                  298.000000E-12 
+      TSWHL4                  276.000000E-12 
+      TSWLH1                  400.000000E-12 
+      TSWLH2                  426.000000E-12 
+      TSWLH3                  400.000000E-12 
+      TSWLH4                  426.000000E-12 
+       TPWRT  100.000000E+03    1.500000E-09 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

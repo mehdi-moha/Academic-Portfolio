@@ -1,0 +1,228 @@
+
+**** 05/28/05 16:10:16 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-3\lab-3-4\lab-3-4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 28 15:03:04 2005
+
+
+
+** Analysis setup **
+.tran 1ms 3ms
+.OP 
+.STMLIB "H:\Lab-3\lab-3-4\lab-3-4.stl"
+.STMLIB "lab-3-4.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-3-4.net"
+
+**** INCLUDING lab-3-4.net ****
+* Schematics Netlist *
+
+
+
+X_U2         $N_0001 $N_0002 $N_0003 $N_0004 $D_HI $D_HI $D_HI a b c d e f g
++  $G_DPWR $G_DGND 7447A PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1         CARRY-0 A-1 A-2 A-3 A-4 B-1 B-2 B-3 B-4 CARRY-4 $N_0001 $N_0002
++  $N_0003 $N_0004 $G_DPWR $G_DGND 7483A PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM3         STIM(1,0) $G_DPWR $G_DGND A-2 IO_STM STIMULUS=A2
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND A-3 IO_STM STIMULUS=A3
+U_DSTM2         STIM(1,0) $G_DPWR $G_DGND A-4 IO_STM STIMULUS=A4
+U_DSTM9         STIM(1,0) $G_DPWR $G_DGND CARRY-0 IO_STM STIMULUS=C0
+U_DSTM8         STIM(1,0) $G_DPWR $G_DGND B-1 IO_STM STIMULUS=B1
+U_DSTM7         STIM(1,0) $G_DPWR $G_DGND B-2 IO_STM STIMULUS=B2
+U_DSTM5         STIM(1,0) $G_DPWR $G_DGND B-4 IO_STM STIMULUS=B4
+U_DSTM4         STIM(1,0) $G_DPWR $G_DGND A-1 IO_STM STIMULUS=A1
+U_DSTM6         STIM(1,0) $G_DPWR $G_DGND B-3 IO_STM STIMULUS=B3
+
+**** RESUMING lab-3-4.cir ****
+.INC "lab-3-4.als"
+
+
+
+**** INCLUDING lab-3-4.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U2            U2(INA=$N_0001 INB=$N_0002 INC=$N_0003 IND=$N_0004 RBIbar=$D_HI
++  LTbar=$D_HI BIbar/RBObar=$D_HI OUTA=a OUTB=b OUTC=c OUTD=d OUTE=e OUTF=f
++  OUTG=g PWR=$G_DPWR GND=$G_DGND )
+X_U1            U1(C0=CARRY-0 A1=A-1 A2=A-2 A3=A-3 A4=A-4 B1=B-1 B2=B-2 B3=B-3
++  B4=B-4 C4=CARRY-4 SUM1=$N_0001 SUM2=$N_0002 SUM3=$N_0003 SUM4=$N_0004
++  PWR=$G_DPWR GND=$G_DGND )
+U_DSTM3          DSTM3(PWR=$G_DPWR GND=$G_DGND OUT0=A-2 )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=A-3 )
+U_DSTM2          DSTM2(PWR=$G_DPWR GND=$G_DGND OUT0=A-4 )
+U_DSTM9          DSTM9(PWR=$G_DPWR GND=$G_DGND OUT0=CARRY-0 )
+U_DSTM8          DSTM8(PWR=$G_DPWR GND=$G_DGND OUT0=B-1 )
+U_DSTM7          DSTM7(PWR=$G_DPWR GND=$G_DGND OUT0=B-2 )
+U_DSTM5          DSTM5(PWR=$G_DPWR GND=$G_DGND OUT0=B-4 )
+U_DSTM4          DSTM4(PWR=$G_DPWR GND=$G_DGND OUT0=A-1 )
+U_DSTM6          DSTM6(PWR=$G_DPWR GND=$G_DGND OUT0=B-3 )
+_    _(a=a)
+_    _(b=b)
+_    _(c=c)
+_    _(d=d)
+_    _(e=e)
+_    _(f=f)
+_    _(g=g)
+_    _(A-4=A-4)
+_    _(A-3=A-3)
+_    _(A-2=A-2)
+_    _(A-1=A-1)
+_    _(B-4=B-4)
+_    _(B-3=B-3)
+_    _(B-2=B-2)
+_    _(B-1=B-1)
+_    _(CARRY-0=CARRY-0)
+_    _(CARRY-4=CARRY-4)
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING lab-3-4.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-3\lab-3-4\lab-3-4.stl written on Sat May 28 14:44:17 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! A1 Digital A2 Digital A3 Digital A4 Digital B1 Digital B2 Digital B3 Digital B4 Digital C0 Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 3ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS A1 STIM (1, 1)
++   +0s 1
++   1ms 0
++   2ms 1
+.STIMULUS A2 STIM (1, 1)
++   +0s 0
++   2ms 1
+.STIMULUS A3 STIM (1, 1)
++   +0s 1
+.STIMULUS A4 STIM (1, 1)
++   +0s 0
+.STIMULUS B4 STIM (1, 1)
++   +0s 0
++   1ms 1
+.STIMULUS B1 STIM (1, 1)
++   +0s 1
++   1ms 0
+.STIMULUS B2 STIM (1, 1)
++   +0s 1
++   2ms 0
+.STIMULUS B3 STIM (1, 1)
++   +0s 0
++   2ms 1
+.STIMULUS C0 STIM (1, 1)
++   +0s 1
++   2ms 0
+.STIMULUS A2 STIM (1, 1)
++   +0s 0
++   2ms 1
+.STIMULUS A3 STIM (1, 1)
++   +0s 1
+.STIMULUS A4 STIM (1, 1)
++   +0s 0
+.STIMULUS C0 STIM (1, 1)
++   +0s 1
++   2ms 0
+.STIMULUS B1 STIM (1, 1)
++   +0s 1
++   1ms 0
+.STIMULUS B2 STIM (1, 1)
++   +0s 1
++   2ms 0
+.STIMULUS B4 STIM (1, 1)
++   +0s 0
++   1ms 1
+.STIMULUS A1 STIM (1, 1)
++   +0s 1
++   1ms 0
++   2ms 1
+
+**** 05/28/05 16:10:16 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-3\lab-3-4\lab-3-4.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 05/28/05 16:10:16 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-3\lab-3-4\lab-3-4.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          IO_STD_OC       
+        DRVL    0             104             104            
+        DRVH    0              96.4             1.000000E+06 
+       AtoD1                 AtoD_STD        AtoD_STD        
+       AtoD2                 AtoD_STD_NX     AtoD_STD_NX     
+       AtoD3                 AtoD_STD        AtoD_STD        
+       AtoD4                 AtoD_STD_NX     AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA2 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA3 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA4 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+      TSWHL1                    1.511000E-09    2.747000E-09 
+      TSWHL2                    1.487000E-09    2.732000E-09 
+      TSWHL3                    1.511000E-09    2.747000E-09 
+      TSWHL4                    1.487000E-09    2.732000E-09 
+      TSWLH1                    3.517000E-09    1.589000E-09 
+      TSWLH2                    3.564000E-09    1.615000E-09 
+      TSWLH3                    3.517000E-09    1.589000E-09 
+      TSWLH4                    3.564000E-09    1.615000E-09 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .06
+

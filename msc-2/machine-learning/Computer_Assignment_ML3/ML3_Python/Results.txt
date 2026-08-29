@@ -1,0 +1,27 @@
+>>> %Run ML3_Python.py
+SVM Training MSE:  0.02666666666666667
+SVM Test MSE:  0.04
+SVM Test Error Rate:  0.040000000000000036
+SVM Iterations: -
+
+LDA Training MSE:  0.02666666666666667
+LDA Test MSE:  0.0
+LDA Test Error Rate:  0.0
+LDA Iterations: -
+
+Naive Bayes Training MSE:  0.09333333333333334
+Naive Bayes Test MSE:  0.05333333333333334
+Naive Bayes Test Error Rate:  0.053333333333333344
+Naive Bayes Iterations: -
+
+Neural Network Training MSE:  0.04
+Neural Network Test MSE:  0.013333333333333334
+Neural Network Test Error Rate:  0.013333333333333308
+Neural Network Iterations:  80 
+
+Decision Trees Training MSE:  0.0
+Decision Trees Test MSE:  0.05333333333333334
+Decision Trees Test Error Rate:  0.053333333333333344
+Decision Trees Iterations: -
+
+>>> 

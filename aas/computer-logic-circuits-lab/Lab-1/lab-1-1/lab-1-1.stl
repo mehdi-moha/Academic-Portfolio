@@ -1,0 +1,15 @@
+* H:\Lab-1\lab-1-1\lab-1-1.stl written on Sat May 28 17:17:55 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! Input Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 6ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS Input STIM (1, 1)
++   +0s 1
++   2ms 0
++   4ms Z

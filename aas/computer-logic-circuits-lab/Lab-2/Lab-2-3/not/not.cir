@@ -1,0 +1,24 @@
+* H:\Lab-2\Lab-2-3\not\not.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Fri May 27 13:22:43 2005
+
+
+
+** Analysis setup **
+.tran 1ms 8ms
+.OP 
+.STMLIB "not.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "not.net"
+.INC "not.als"
+
+
+.probe
+
+
+.END

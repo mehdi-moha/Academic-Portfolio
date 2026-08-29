@@ -1,0 +1,242 @@
+
+**** 05/29/05 21:12:58 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-4\lab-4-4\lab-4-4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sun May 29 20:27:54 2005
+
+
+
+** Analysis setup **
+.tran 1ms 6ms
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-4-4.net"
+
+**** INCLUDING lab-4-4.net ****
+* Schematics Netlist *
+
+
+
+U_DSTM5         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_4 
++ IO_STM
++ IO_LEVEL=0
++  0 0  
++ 1m 1  
++ 2m 1  
++ 3m 0 
++ 4m 0  
++ 5m 0  
+U_DSTM9         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_8 
++ IO_STM
++ IO_LEVEL=0
++  0 0  
++ 1m 1  
++ 2m 1  
++ 3m 0 
++ 4m 0  
++ 5m 0  
+U_DSTM8         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_7 
++ IO_STM
++ IO_LEVEL=0
++  0 1  
++ 1m 0  
++ 2m 1  
++ 3m 0 
++ 4m 1  
++ 5m 1  
+U_DSTM7         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_6 
++ IO_STM
++ IO_LEVEL=0
++  0 1  
++ 1m 1  
++ 2m 1  
++ 3m 0 
++ 4m 0  
++ 5m 1  
+U_DSTM6         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_5 
++ IO_STM
++ IO_LEVEL=0
++  0 0  
++ 1m 0  
++ 2m 1  
++ 3m 0 
++ 4m 1  
++ 5m 0  
+U_DSTM1         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_0 
++ IO_STM
++ IO_LEVEL=0
++  0 0  
++ 1m 1  
++ 2m 1  
++ 3m 0 
++ 4m 0  
++ 5m 1  
+U_DSTM2         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_1 
++ IO_STM
++ IO_LEVEL=0
++  0 0  
++ 1m 0  
++ 2m 1  
++ 3m 0 
++ 4m 1  
++ 5m 1  
+U_DSTM3         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_2 
++ IO_STM
++ IO_LEVEL=0
++  0 1  
++ 1m 1  
++ 2m 1  
++ 3m 0 
++ 4m 0  
++ 5m 1  
+U_DSTM4         STIM(1,1)
++ $G_DPWR $G_DGND
++ Input_3 
++ IO_STM
++ IO_LEVEL=0
++  0 1  
++ 1m 0  
++ 2m 1  
++ 3m 0 
++ 4m 1  
++ 5m 0  
+X_U1         Input_0 Input_1 Input_2 Input_3 Input_4 Input_5 Input_6 Input_7
++  Input_8 Pe Po $G_DPWR $G_DGND 74AS280 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING lab-4-4.cir ****
+.INC "lab-4-4.als"
+
+
+
+**** INCLUDING lab-4-4.als ****
+* Schematics Aliases *
+
+.ALIASES
+U_DSTM5          DSTM5(PIN1=Input_4 )
+U_DSTM9          DSTM9(PIN1=Input_8 )
+U_DSTM8          DSTM8(PIN1=Input_7 )
+U_DSTM7          DSTM7(PIN1=Input_6 )
+U_DSTM6          DSTM6(PIN1=Input_5 )
+U_DSTM1          DSTM1(PIN1=Input_0 )
+U_DSTM2          DSTM2(PIN1=Input_1 )
+U_DSTM3          DSTM3(PIN1=Input_2 )
+U_DSTM4          DSTM4(PIN1=Input_3 )
+X_U1            U1(A=Input_0 B=Input_1 C=Input_2 D=Input_3 E=Input_4 F=Input_5
++  G=Input_6 H=Input_7 I=Input_8 EVEN=Pe ODD=Po PWR=$G_DPWR GND=$G_DGND )
+_    _(Input_4=Input_4)
+_    _(Input_8=Input_8)
+_    _(Input_7=Input_7)
+_    _(Input_6=Input_6)
+_    _(Input_5=Input_5)
+_    _(Input_0=Input_0)
+_    _(Input_1=Input_1)
+_    _(Input_2=Input_2)
+_    _(Input_3=Input_3)
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+_    _(Pe=Pe)
+_    _(Po=Po)
+.ENDALIASES
+
+
+**** RESUMING lab-4-4.cir ****
+.probe
+
+
+.END
+
+**** 05/29/05 21:12:58 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-4\lab-4-4\lab-4-4.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 05/29/05 21:12:58 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-4\lab-4-4\lab-4-4.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_AS00         
+        DRVL    0              19.8          
+        DRVH    0              19.9          
+       AtoD1                 AtoD_AS00       
+       AtoD2                 AtoD_AS00_NX    
+       AtoD3                 AtoD_AS00       
+       AtoD4                 AtoD_AS00_NX    
+       DtoA1 DtoA_STM        DtoA_AS00       
+       DtoA2 DtoA_STM        DtoA_AS00       
+       DtoA3 DtoA_STM        DtoA_AS00       
+       DtoA4 DtoA_STM        DtoA_AS00       
+      TSWHL1                  298.000000E-12 
+      TSWHL2                  276.000000E-12 
+      TSWHL3                  298.000000E-12 
+      TSWHL4                  276.000000E-12 
+      TSWLH1                  400.000000E-12 
+      TSWLH2                  426.000000E-12 
+      TSWLH3                  400.000000E-12 
+      TSWLH4                  426.000000E-12 
+       TPWRT  100.000000E+03    1.500000E-09 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+

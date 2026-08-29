@@ -1,0 +1,200 @@
+
+**** 05/30/05 02:32:03 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-10\lab-10-1\lab-10-1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Mon May 30 01:11:14 2005
+
+
+
+** Analysis setup **
+.tran 0.001s 2s
+.OPTIONS DIGINITSTATE=0
+.OP 
+.STMLIB "H:\Lab-10\lab-10-1\lab-10-1.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-10-1.net"
+
+**** INCLUDING lab-10-1.net ****
+* Schematics Netlist *
+
+
+
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND $N_0001 IO_STM STIMULUS=CLK
+X_U1         $D_LO $D_LO $N_0001 $N_0004 $D_LO $D_LO $N_0004 $N_0005 $N_0006
++  $N_0007 $G_DPWR $G_DGND 7490A PARAMS:
++ IO_LEVEL=0
++ MNTYMXDLY=0
+
+**** RESUMING lab-10-1.cir ****
+.INC "lab-10-1.als"
+
+
+
+**** INCLUDING lab-10-1.als ****
+* Schematics Aliases *
+
+.ALIASES
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=$N_0001 )
+X_U1            U1(R91=$D_LO R92=$D_LO CKA=$N_0001 CKB=$N_0004 R01=$D_LO
++  R01=$D_LO QA=$N_0004 QB=$N_0005 QC=$N_0006 QD=$N_0007 PWR=$G_DPWR GND=$G_DGND
++  )
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING lab-10-1.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-10\lab-10-1\lab-10-1.stl written on Mon May 30 01:04:43 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! CLK Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 400ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS CLK STIM (1, 1) ;! CLOCK 10Hz 0.5 0 0
++   +0s 0
++   +50ms 1
++   Repeat Forever
++      +50ms 0
++      +50ms 1
++   EndRepeat
+
+**** 05/30/05 02:32:03 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-10\lab-10-1\lab-10-1.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 05/30/05 02:32:03 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-10\lab-10-1\lab-10-1.sch
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_EFF          
+  TPCLKQLHMN    0            
+  TPCLKQLHTY    0            
+  TPCLKQLHMX    0            
+  TPCLKQHLMN    0            
+  TPCLKQHLTY    0            
+  TPCLKQHLMX    0            
+   TPPCQLHMN    0            
+   TPPCQLHTY    0            
+   TPPCQLHMX    0            
+   TPPCQHLMN    0            
+   TPPCQHLTY    0            
+   TPPCQHLMX    0            
+    TWCLKLMN    0            
+    TWCLKLTY    0            
+    TWCLKLMX    0            
+    TWCLKHMN    0            
+    TWCLKHTY    0            
+    TWCLKHMX    0            
+     TWPCLMN    0            
+     TWPCLTY    0            
+     TWPCLMX    0            
+   TSUDCLKMN    0            
+   TSUDCLKTY    0            
+   TSUDCLKMX    0            
+ TSUPCCLKHMN    0            
+ TSUPCCLKHTY    0            
+ TSUPCCLKHMX    0            
+    THDCLKMN    0            
+    THDCLKTY    0            
+    THDCLKMX    0            
+  TSUCECLKMN    0            
+  TSUCECLKTY    0            
+  TSUCECLKMX    0            
+   THCECLKMN    0            
+   THCECLKTY    0            
+   THCECLKMX    0            
+
+
+**** 05/30/05 02:32:03 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-10\lab-10-1\lab-10-1.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.511000E-09 
+      TSWHL2                    1.487000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.517000E-09 
+      TSWLH2                    3.564000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .54
+

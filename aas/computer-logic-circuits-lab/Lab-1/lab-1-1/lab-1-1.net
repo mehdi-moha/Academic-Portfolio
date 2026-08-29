@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND Input IO_STM STIMULUS=Input
+X_U1A         Input Output $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0

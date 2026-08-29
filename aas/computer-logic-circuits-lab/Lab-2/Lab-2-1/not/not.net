@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND A0 IO_STM STIMULUS=A0
+X_U1A         A0 A0 F $G_DPWR $G_DGND 74AS00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0

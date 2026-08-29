@@ -1,0 +1,35 @@
+* H:\Lab-4\lab-4-2\lab-4-2.stl written on Sun May 29 01:08:56 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! A0 Digital A1 Digital A2 Digital A3 Digital B0 Digital B1 Digital B2 Digital B3 Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 6ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS A0 STIM (1, 1)
++   +0s 1
++   4ms 0
+.STIMULUS A1 STIM (1, 1)
++   +0s 1
++   2ms 0
++   4ms 1
+.STIMULUS A2 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
+.STIMULUS A3 STIM (1, 1)
++   +0s 0
++   2ms 1
+.STIMULUS B0 STIM (1, 1)
++   +0s 0
+.STIMULUS B1 STIM (1, 1)
++   +0s 0
++   4ms 1
+.STIMULUS B2 STIM (1, 1)
++   +0s 1
++   4ms 0
+.STIMULUS B3 STIM (1, 1)
++   +0s 1

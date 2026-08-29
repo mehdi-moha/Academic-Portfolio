@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+X_U1A         Input Output $G_CD4000_VDD $G_CD4000_VSS CD4069UB PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND Input IO_STM STIMULUS=Input

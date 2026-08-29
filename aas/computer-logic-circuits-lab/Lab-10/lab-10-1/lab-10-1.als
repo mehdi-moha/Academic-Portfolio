@@ -1,0 +1,11 @@
+* Schematics Aliases *
+
+.ALIASES
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=$N_0001 )
+X_U1            U1(R91=$D_LO R92=$D_LO CKA=$N_0001 CKB=$N_0004 R01=$D_LO
++  R01=$D_LO QA=$N_0004 QB=$N_0005 QC=$N_0006 QD=$N_0007 PWR=$G_DPWR GND=$G_DGND
++  )
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+

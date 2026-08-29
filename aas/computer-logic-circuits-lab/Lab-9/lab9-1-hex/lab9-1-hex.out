@@ -1,0 +1,214 @@
+
+**** 05/30/05 21:45:48 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-9\lab9-1-hex\lab9-1-hex.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Mon May 30 21:44:24 2005
+
+
+
+** Analysis setup **
+.tran 1ms 30ms
+.OPTIONS DIGINITSTATE=0
+.OP 
+.STMLIB "H:\Lab-9\lab9-1-hex\lab9-1-hex.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab9-1-hex.net"
+
+**** INCLUDING lab9-1-hex.net ****
+* Schematics Netlist *
+
+
+
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND $N_0001 IO_STM STIMULUS=UP/DOWN
+U_DSTM2         STIM(1,0) $G_DPWR $G_DGND $N_0002 IO_STM STIMULUS=CLK
+X_U1         $N_0002 $N_0001 $D_HI $D_LO $D_LO $D_LO $D_LO $D_LO $D_LO O1 O2 O3
++  O4 $N_0005 $G_CD4000_VDD $G_CD4000_VSS CD4029A PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING lab9-1-hex.cir ****
+.INC "lab9-1-hex.als"
+
+
+
+**** INCLUDING lab9-1-hex.als ****
+* Schematics Aliases *
+
+.ALIASES
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=$N_0001 )
+U_DSTM2          DSTM2(PWR=$G_DPWR GND=$G_DGND OUT0=$N_0002 )
+X_U1            U1(CLK=$N_0002 UP/DOWN=$N_0001 BIN/DEC=$D_HI CINbar=$D_LO
++  PSEN=$D_LO JAM1=$D_LO JAM2=$D_LO JAM3=$D_LO JAM4=$D_LO Q1=O1 Q2=O2 Q3=O3 Q4=O4
++  COUTbar=$N_0005 VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS )
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+_    _(O1=O1)
+_    _(O2=O2)
+_    _(O3=O3)
+_    _(O4=O4)
+_    _($G_CD4000_VDD=$G_CD4000_VDD)
+_    _($G_CD4000_VSS=$G_CD4000_VSS)
+.ENDALIASES
+
+
+**** RESUMING lab9-1-hex.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-9\lab9-1-hex\lab9-1-hex.stl written on Mon May 30 21:44:08 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! UP/DOWN Digital CLK Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 30ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS UP/DOWN STIM (1, 1)
++   +0s 1
++   15ms 0
+.STIMULUS CLK STIM (1, 1) ;! CLOCK 1khz 0.5 0 0
++   +0s 0
++   +500us 1
++   Repeat Forever
++      +500us 0
++      +500us 1
++   EndRepeat
+.STIMULUS UP/DOWN STIM (1, 1)
++   +0s 1
++   15ms 0
+
+**** 05/30/05 21:45:48 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-9\lab9-1-hex\lab9-1-hex.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 05/30/05 21:45:48 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-9\lab9-1-hex\lab9-1-hex.sch
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_EFF          
+  TPCLKQLHMN    0            
+  TPCLKQLHTY    0            
+  TPCLKQLHMX    0            
+  TPCLKQHLMN    0            
+  TPCLKQHLTY    0            
+  TPCLKQHLMX    0            
+   TPPCQLHMN    0            
+   TPPCQLHTY    0            
+   TPPCQLHMX    0            
+   TPPCQHLMN    0            
+   TPPCQHLTY    0            
+   TPPCQHLMX    0            
+    TWCLKLMN    0            
+    TWCLKLTY    0            
+    TWCLKLMX    0            
+    TWCLKHMN    0            
+    TWCLKHTY    0            
+    TWCLKHMX    0            
+     TWPCLMN    0            
+     TWPCLTY    0            
+     TWPCLMX    0            
+   TSUDCLKMN    0            
+   TSUDCLKTY    0            
+   TSUDCLKMX    0            
+ TSUPCCLKHMN    0            
+ TSUPCCLKHTY    0            
+ TSUPCCLKHMX    0            
+    THDCLKMN    0            
+    THDCLKTY    0            
+    THDCLKMX    0            
+  TSUCECLKMN    0            
+  TSUCECLKTY    0            
+  TSUCECLKMX    0            
+   THCECLKMN    0            
+   THCECLKTY    0            
+   THCECLKMX    0            
+
+
+**** 05/30/05 21:45:48 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-9\lab9-1-hex\lab9-1-hex.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_4000A        
+        DRVL    0               1.649000E+03 
+        DRVH    0               1.649000E+03 
+       AtoD1                 AtoD_4000A      
+       AtoD2                 AtoD_4000A_NX   
+       AtoD3                 AtoD_4000A      
+       AtoD4                 AtoD_4000A_NX   
+       DtoA1 DtoA_STM        DtoA_4000A      
+       DtoA2 DtoA_STM        DtoA_4000A      
+       DtoA3 DtoA_STM        DtoA_4000A      
+       DtoA4 DtoA_STM        DtoA_4000A      
+    DIGPOWER                 CD4000_PWR      
+      TSWHL1                    7.070000E-09 
+      TSWHL2                    6.940000E-09 
+      TSWHL3                    9.330000E-09 
+      TSWHL4                    9.180000E-09 
+      TSWLH1                    8.580000E-09 
+      TSWLH2                    8.370000E-09 
+      TSWLH3                   10.730000E-09 
+      TSWLH4                   10.590000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+

@@ -1,0 +1,26 @@
+SVM Training MSE: 0.000000
+SVM Test MSE: 0.040000
+SVM Test Error Rate: 0.040000
+SVM Iterations: -
+
+LDA Training MSE: 0.013333
+LDA Test MSE: 0.040000
+LDA Test Error Rate: 0.040000
+LDA Iterations: -
+
+Naive Bayes Training MSE: 0.026667
+Naive Bayes Test MSE: 0.066667
+Naive Bayes Test Error Rate: 0.066667
+Naive Bayes Iterations: -
+
+Neural Network Training MSE: 0.000000
+Neural Network Test MSE: 0.080000
+Neural Network Test Error Rate: 0.080000
+Neural Network Iterations: 14
+
+Decision Trees Training MSE: 0.000000
+Decision Trees Test MSE: 0.053333
+Decision Trees Test Error Rate: 0.053333
+Decision Trees Iterations: -
+
+>> 

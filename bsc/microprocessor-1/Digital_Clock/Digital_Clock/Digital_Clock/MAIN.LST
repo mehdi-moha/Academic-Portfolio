@@ -1,0 +1,206 @@
+MAIN                                                                                                          PAGE 1
+
+                       1    $MOD51 ; THIS INCLUDES 8051 DEFINITIONS FOR THE METALINK ASSEMBLER
+                       2    
+                       3    ; ------------------------------------
+                       4    ; Interrupt Vector Table
+                       5    ; ------------------------------------
+0000                   6    ORG 0000H
+0000 020030            7        LJMP MAIN
+                       8    
+0003                   9    ORG 0003H
+0003 020200           10        LJMP INT0_MIN_RESET
+                      11    
+0013                  12    ORG 0013H
+0013 020250           13        LJMP INT1_HOUR_RESET
+                      14    
+0030                  15    ORG 0030H
+                      16    ; ------------------------------------
+                      17    ; Main Program
+                      18    ; ------------------------------------
+0030                  19    MAIN:
+0030 D2AF             20        SETB EA
+0032 D2A8             21        SETB EX0
+0034 D2AA             22        SETB EX1
+0036 758901           23        MOV TMOD, #01H
+0039 758000           24        MOV P0, #00
+003C 759000           25        MOV P1, #00
+003F 75A000           26        MOV P2, #00
+                      27    
+0042                  28    CLOCK_LOOP:
+0042 7E01             29        MOV R6, #01         ; Hour counter
+0044 7F18             30        MOV R7, #24         ; Hour loop count
+                      31    
+0046                  32    HOUR_LOOP:
+0046 7C01             33        MOV R4, #01         ; Minute counter
+0048 7D3C             34        MOV R5, #60         ; Minute loop count
+                      35    
+004A                  36    MINUTE_LOOP:
+004A 7A01             37        MOV R2, #01         ; Second counter
+004C 7B3C             38        MOV R3, #60         ; Second loop count
+                      39    
+004E                  40    SECOND_LOOP:
+004E 120086           41            LCALL DELAY
+                      42    
+0051 EA               43            MOV A, R2
+0052 643C             44            XRL A, #60
+0054 7002             45            JNZ SKIP_SEC_RESET
+0056 7A00             46            MOV R2, #00
+0058                  47    SKIP_SEC_RESET:
+0058 EA               48            MOV A, R2
+0059 20B4FD           49            JB P3.4, $
+005C 12009A           50            LCALL BIN_TO_BCD
+005F F580             51            MOV P0, A
+0061 0A               52            INC R2
+0062 DBEA             53        DJNZ R3, SECOND_LOOP
+                      54    
+0064 EC               55        MOV A, R4
+0065 643C             56        XRL A, #60
+0067 7002             57        JNZ SKIP_MIN_RESET
+0069 7C00             58        MOV R4, #00
+MAIN                                                                                                          PAGE 2
+
+006B                  59    SKIP_MIN_RESET:
+006B EC               60        MOV A, R4
+006C 12009A           61        LCALL BIN_TO_BCD
+006F F590             62        MOV P1, A
+0071 0C               63        INC R4
+0072 DDD6             64    DJNZ R5, MINUTE_LOOP
+                      65    
+0074 EE               66        MOV A, R6
+0075 6418             67        XRL A, #24
+0077 7002             68        JNZ SKIP_HOUR_RESET
+0079 7E00             69        MOV R6, #00
+007B                  70    SKIP_HOUR_RESET:
+007B EE               71        MOV A, R6
+007C 12009A           72        LCALL BIN_TO_BCD
+007F F5A0             73        MOV P2, A
+0081 0E               74        INC R6
+0082 DFC2             75    DJNZ R7, HOUR_LOOP
+                      76    
+0084 80BC             77        JMP CLOCK_LOOP
+                      78    
+                      79    ; ------------------------------------
+                      80    ; Delay Subroutine (~1 sec)
+                      81    ; ------------------------------------
+0086                  82    DELAY:
+0086 7840             83        MOV R0, #40H
+0088                  84    DELAY_LOOP:
+0088 758AE5           85        MOV TL0, #LOW(-27)
+008B 758CFF           86        MOV TH0, #HIGH(-27)
+008E D28C             87        SETB TR0
+0090 308DFD           88        JNB TF0, $
+0093 C28D             89        CLR TF0
+0095 D8F1             90        DJNZ R0, DELAY_LOOP
+0097 C28C             91        CLR TR0
+0099 22               92        RET
+                      93    
+                      94    ; ------------------------------------
+                      95    ; Binary to BCD Conversion
+                      96    ; ------------------------------------
+009A                  97    BIN_TO_BCD:
+009A 75F00A           98        MOV B, #10
+009D 84               99        DIV AB
+009E C4              100        SWAP A
+009F 45F0            101        ORL A, B
+00A1 22              102        RET
+                     103    
+                     104    ; ------------------------------------
+                     105    ; External Interrupt 0 ??? Reset Minutes
+                     106    ; ------------------------------------
+0200                 107    ORG 0200H
+0200                 108    INT0_MIN_RESET:
+0200 30B424          109        JNB P3.4, RETURN_INT0
+0203 F531            110        MOV 31H, A
+0205 85F032          111        MOV 32H, B
+0208 C2A8            112        CLR EX0
+020A C2AA            113        CLR EX1
+                     114    
+020C EC              115        MOV A, R4
+020D 643C            116        XRL A, #60
+MAIN                                                                                                          PAGE 3
+
+020F 7002            117        JNZ SKIP_MIN_RESET_INT
+0211 7C00            118        MOV R4, #00
+0213                 119    SKIP_MIN_RESET_INT:
+0213 EC              120        MOV A, R4
+0214 12009A          121        LCALL BIN_TO_BCD
+0217 F590            122        MOV P1, A
+0219 743C            123        MOV A, #60
+021B 9C              124        SUBB A, R4
+021C FD              125        MOV R5, A
+021D 0C              126        INC R4
+                     127    
+021E E531            128        MOV A, 31H
+0220 8532F0          129        MOV B, 32H
+0223 D2A8            130        SETB EX0
+0225 D2AA            131        SETB EX1
+0227                 132    RETURN_INT0:
+0227 32              133        RETI
+                     134    
+                     135    ; ------------------------------------
+                     136    ; External Interrupt 1 ??? Reset Hours
+                     137    ; ------------------------------------
+0250                 138    ORG 0250H
+0250                 139    INT1_HOUR_RESET:
+0250 30B424          140        JNB P3.4, RETURN_INT1
+0253 F533            141        MOV 33H, A
+0255 85F034          142        MOV 34H, B
+0258 C2A8            143        CLR EX0
+025A C2AA            144        CLR EX1
+                     145    
+025C EE              146        MOV A, R6
+025D 6418            147        XRL A, #24
+025F 7002            148        JNZ SKIP_HOUR_RESET_INT
+0261 7E00            149        MOV R6, #00
+0263                 150    SKIP_HOUR_RESET_INT:
+0263 EE              151        MOV A, R6
+0264 12009A          152        LCALL BIN_TO_BCD
+0267 F5A0            153        MOV P2, A
+0269 7418            154        MOV A, #24
+026B 9E              155        SUBB A, R6
+026C FF              156        MOV R7, A
+026D 0E              157        INC R6
+                     158    
+026E E533            159        MOV A, 33H
+0270 8534F0          160        MOV B, 34H
+0273 D2A8            161        SETB EX0
+0275 D2AA            162        SETB EX1
+0277                 163    RETURN_INT1:
+0277 32              164        RETI
+                     165    
+                     166    END
+
+VERSION 1.2k ASSEMBLY COMPLETE, 0 ERRORS FOUND
+MAIN                                                                                                          PAGE 4
+
+B. . . . . . . . . . . . . . . .  D ADDR  00F0H  PREDEFINED  
+BIN_TO_BCD . . . . . . . . . . .  C ADDR  009AH  
+CLOCK_LOOP . . . . . . . . . . .  C ADDR  0042H  
+DELAY. . . . . . . . . . . . . .  C ADDR  0086H  
+DELAY_LOOP . . . . . . . . . . .  C ADDR  0088H  
+EA . . . . . . . . . . . . . . .  B ADDR  00AFH  PREDEFINED  
+EX0. . . . . . . . . . . . . . .  B ADDR  00A8H  PREDEFINED  
+EX1. . . . . . . . . . . . . . .  B ADDR  00AAH  PREDEFINED  
+HOUR_LOOP. . . . . . . . . . . .  C ADDR  0046H  
+INT0_MIN_RESET . . . . . . . . .  C ADDR  0200H  
+INT1_HOUR_RESET. . . . . . . . .  C ADDR  0250H  
+MAIN . . . . . . . . . . . . . .  C ADDR  0030H  
+MINUTE_LOOP. . . . . . . . . . .  C ADDR  004AH  
+P0 . . . . . . . . . . . . . . .  D ADDR  0080H  PREDEFINED  
+P1 . . . . . . . . . . . . . . .  D ADDR  0090H  PREDEFINED  
+P2 . . . . . . . . . . . . . . .  D ADDR  00A0H  PREDEFINED  
+P3 . . . . . . . . . . . . . . .  D ADDR  00B0H  PREDEFINED  
+RETURN_INT0. . . . . . . . . . .  C ADDR  0227H  
+RETURN_INT1. . . . . . . . . . .  C ADDR  0277H  
+SECOND_LOOP. . . . . . . . . . .  C ADDR  004EH  
+SKIP_HOUR_RESET. . . . . . . . .  C ADDR  007BH  
+SKIP_HOUR_RESET_INT. . . . . . .  C ADDR  0263H  
+SKIP_MIN_RESET . . . . . . . . .  C ADDR  006BH  
+SKIP_MIN_RESET_INT . . . . . . .  C ADDR  0213H  
+SKIP_SEC_RESET . . . . . . . . .  C ADDR  0058H  
+TF0. . . . . . . . . . . . . . .  B ADDR  008DH  PREDEFINED  
+TH0. . . . . . . . . . . . . . .  D ADDR  008CH  PREDEFINED  
+TL0. . . . . . . . . . . . . . .  D ADDR  008AH  PREDEFINED  
+TMOD . . . . . . . . . . . . . .  D ADDR  0089H  PREDEFINED  
+TR0. . . . . . . . . . . . . . .  B ADDR  008CH  PREDEFINED  

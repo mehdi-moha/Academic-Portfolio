@@ -1,0 +1,38 @@
+* Schematics Netlist *
+
+
+
+U_DSTM3         STIM(1,1)
++ $G_DPWR $G_DGND
++ A2 
++ IO_STM
++ IO_LEVEL=0
++ TIMESTEP=1m 
++ 0 0  
++ 4c 1  
+U_DSTM1         STIM(1,1)
++ $G_DPWR $G_DGND
++ A0 
++ IO_STM
++ IO_LEVEL=0
++  0 0  
++ 1m 1  
++ 2m 0  
++ 3m 1 
++ 4m 0  
++ 5m 1  
++ 6m 0  
++ 7m 1  
+U_DSTM2         STIM(1,1)
++ $G_DPWR $G_DGND
++ A1 
++ IO_STM
++ IO_LEVEL=0
++ TIMESTEP=1m 
++ 0 0  
++ 2c 1  
++ 4c 0  
++ 6c 1 
+X_U1         $D_HI $D_LO $D_LO A0 A1 A2 Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7 $G_DPWR $G_DGND
++  74AS138 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0

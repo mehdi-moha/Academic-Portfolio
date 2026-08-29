@@ -1,0 +1,7 @@
+To run the complete analysis:
+1. In Google Colab: Copy the code below to a cell and execute
+2. In IDE: Open and run the file RUN_THIS.py
+
+Code to execute:
+from main import main
+main()

@@ -1,0 +1,9 @@
+* Schematics Netlist *
+
+
+
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND $N_0001 IO_STM STIMULUS=CLK
+X_U1         $D_LO $D_LO $N_0001 $N_0004 $D_LO $D_LO $N_0004 $N_0005 $N_0006
++  $N_0007 $G_DPWR $G_DGND 7490A PARAMS:
++ IO_LEVEL=0
++ MNTYMXDLY=0

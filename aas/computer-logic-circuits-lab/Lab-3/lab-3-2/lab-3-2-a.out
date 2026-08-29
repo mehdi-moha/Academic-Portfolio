@@ -1,0 +1,221 @@
+
+**** 05/28/05 22:37:12 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-3\lab-3-2\lab-3-2-a.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 28 22:14:01 2005
+
+
+
+** Analysis setup **
+.tran 1ms 8ms
+.OP 
+.STMLIB "H:\Lab-3\lab-3-2\lab-3-2-a.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-3-2-a.net"
+
+**** INCLUDING lab-3-2-a.net ****
+* Schematics Netlist *
+
+
+
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND A0 IO_STM STIMULUS=A
+U_DSTM2         STIM(1,0) $G_DPWR $G_DGND A1 IO_STM STIMULUS=B
+U_DSTM3         STIM(1,0) $G_DPWR $G_DGND A2 IO_STM STIMULUS=C
+U_DSTM4         STIM(1,0) $G_DPWR $G_DGND A3 IO_STM STIMULUS=D
+X_U1         A0 A1 A2 A3 $D_HI $D_HI $D_LO a b c d e f g $G_DPWR $G_DGND 7447A
++  PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING lab-3-2-a.cir ****
+.INC "lab-3-2-a.als"
+
+
+
+**** INCLUDING lab-3-2-a.als ****
+* Schematics Aliases *
+
+.ALIASES
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=A0 )
+U_DSTM2          DSTM2(PWR=$G_DPWR GND=$G_DGND OUT0=A1 )
+U_DSTM3          DSTM3(PWR=$G_DPWR GND=$G_DGND OUT0=A2 )
+U_DSTM4          DSTM4(PWR=$G_DPWR GND=$G_DGND OUT0=A3 )
+X_U1            U1(INA=A0 INB=A1 INC=A2 IND=A3 RBIbar=$D_HI LTbar=$D_HI
++  BIbar/RBObar=$D_LO OUTA=a OUTB=b OUTC=c OUTD=d OUTE=e OUTF=f OUTG=g
++  PWR=$G_DPWR GND=$G_DGND )
+_    _(A0=A0)
+_    _(A1=A1)
+_    _(A2=A2)
+_    _(A3=A3)
+_    _(a=a)
+_    _(b=b)
+_    _(c=c)
+_    _(d=d)
+_    _(e=e)
+_    _(f=f)
+_    _(g=g)
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+.ENDALIASES
+
+
+**** RESUMING lab-3-2-a.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-3\lab-3-2\lab-3-2-a.stl written on Sat May 28 22:23:22 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! A Digital B Digital C Digital D Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 8ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS A STIM (1, 1)
++   +0s 0
++   500us 1
++   1ms 0
++   1.5ms 1
++   2ms 0
++   2.5ms 1
++   3ms 0
++   3.5ms 1
++   4ms 0
++   4.5ms 1
++   5ms 0
++   5.5ms 1
++   6ms 0
++   6.5ms 1
++   7ms 0
++   7.5ms 1
+.STIMULUS B STIM (1, 1)
++   +0s 0
++   1ms 1
++   2ms 0
++   3ms 1
++   4ms 0
++   5ms 1
++   6ms 0
++   7ms 1
+.STIMULUS C STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+.STIMULUS D STIM (1, 1)
++   +0s 0
++   4ms 1
+.STIMULUS A STIM (1, 1)
++   +0s 0
++   500us 1
++   1ms 0
++   1.5ms 1
++   2ms 0
++   2.5ms 1
++   3ms 0
++   3.5ms 1
++   4ms 0
++   4.5ms 1
++   5ms 0
++   5.5ms 1
++   6ms 0
++   6.5ms 1
++   7ms 0
++   7.5ms 1
+.STIMULUS B STIM (1, 1)
++   +0s 0
++   1ms 1
++   2ms 0
++   3ms 1
++   4ms 0
++   5ms 1
++   6ms 0
++   7ms 1
+.STIMULUS C STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+
+**** 05/28/05 22:37:12 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-3\lab-3-2\lab-3-2-a.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 05/28/05 22:37:12 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-3\lab-3-2\lab-3-2-a.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          IO_STD_OC       
+        DRVL    0             104             104            
+        DRVH    0              96.4             1.000000E+06 
+       AtoD1                 AtoD_STD        AtoD_STD        
+       AtoD2                 AtoD_STD_NX     AtoD_STD_NX     
+       AtoD3                 AtoD_STD        AtoD_STD        
+       AtoD4                 AtoD_STD_NX     AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA2 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA3 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA4 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+      TSWHL1                    1.511000E-09    2.747000E-09 
+      TSWHL2                    1.487000E-09    2.732000E-09 
+      TSWHL3                    1.511000E-09    2.747000E-09 
+      TSWHL4                    1.487000E-09    2.732000E-09 
+      TSWLH1                    3.517000E-09    1.589000E-09 
+      TSWLH2                    3.564000E-09    1.615000E-09 
+      TSWLH3                    3.517000E-09    1.589000E-09 
+      TSWLH4                    3.564000E-09    1.615000E-09 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .04
+

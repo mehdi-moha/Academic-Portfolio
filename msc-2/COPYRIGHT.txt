@@ -1,0 +1,21 @@
+Copyright © 2026 Mehdi Mohammadi
+
+This directory, including all of its subdirectories and files, may contain a combination of original work by Mehdi Mohammadi and third-party components.
+
+Original Work:
+All original source code, scripts, documents, reports, figures, datasets, results, designs, written materials, and author-created modifications in this directory and its subdirectories are © 2026 Mehdi Mohammadi. All rights reserved.
+
+Unauthorized copying, reproduction, redistribution, publication, modification, adaptation, sublicensing, sale, commercial or non-commercial use, or any other use of Mehdi Mohammadi's original materials, in whole or in part, is strictly prohibited without prior written permission from Mehdi Mohammadi.
+
+Automated Access and AI/ML Use:
+Automated access, scraping, crawling, indexing, data mining, text and data mining, code extraction, dataset creation, bulk downloading, or automated collection of Mehdi Mohammadi's original materials in this directory or its subdirectories is strictly prohibited without prior written permission.
+
+Any use of Mehdi Mohammadi's original materials for training, fine-tuning, evaluating, benchmarking, testing, validating, developing, improving, or deploying artificial intelligence, machine learning, deep learning, large language models, data-driven models, or automated systems is strictly prohibited without prior written permission from Mehdi Mohammadi.
+
+No License Granted:
+No license or right is granted by making this directory or its contents publicly accessible or by allowing viewing of its contents. Viewing, accessing, cloning, downloading, or forking this repository does not grant permission to use, copy, modify, distribute, publish, or exploit Mehdi Mohammadi's original materials in any way.
+
+Third-Party Materials:
+Some portions of this directory may include code, datasets, libraries, examples, models, documents, or other materials from external sources. Such third-party components remain the intellectual property of their respective authors or rights holders and are subject to their own licenses and usage terms.
+
+See individual source files, documentation, or accompanying license notices for attribution and licensing details related to third-party materials.

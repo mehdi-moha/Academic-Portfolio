@@ -1,0 +1,22 @@
+* H:\Lab-1\lab-1-5-t5\lab-1-5-t5.stl written on Sat May 28 18:08:57 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! A Digital B Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 10ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS A STIM (1, 1)
++   +0s Z
++   2ms 0
++   4ms Z
++   6ms 1
++   8ms Z
+.STIMULUS B STIM (1, 1)
++   +0s 0
++   2ms Z
++   4ms 1
++   6ms Z

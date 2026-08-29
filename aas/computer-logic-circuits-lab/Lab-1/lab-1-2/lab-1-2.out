@@ -1,0 +1,145 @@
+
+**** 05/31/05 18:12:33 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-1\lab-1-2\lab-1-2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 28 17:25:54 2005
+
+
+
+** Analysis setup **
+.tran 1ms 6ms
+.OP 
+.STMLIB "H:\Lab-1\lab-1-2\lab-1-2.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-1-2.net"
+
+**** INCLUDING lab-1-2.net ****
+* Schematics Netlist *
+
+
+
+X_U1A         Input Output $G_CD4000_VDD $G_CD4000_VSS CD4069UB PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND Input IO_STM STIMULUS=Input
+
+**** RESUMING lab-1-2.cir ****
+.INC "lab-1-2.als"
+
+
+
+**** INCLUDING lab-1-2.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U1A           U1A(A=Input G=Output VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=Input )
+_    _(Input=Input)
+_    _(Output=Output)
+_    _($G_CD4000_VSS=$G_CD4000_VSS)
+_    _($G_CD4000_VDD=$G_CD4000_VDD)
+_    _($G_DPWR=$G_DPWR)
+_    _($G_DGND=$G_DGND)
+.ENDALIASES
+
+
+**** RESUMING lab-1-2.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-1\lab-1-2\lab-1-2.stl written on Sat May 28 17:25:02 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! Input Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 6ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS Input STIM (1, 1)
++   +0s 1
++   2ms 0
++   4ms Z
+
+**** 05/31/05 18:12:33 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-1\lab-1-2\lab-1-2.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_CD4069UB      
+      TPLHMN   22.000000E-09 
+      TPLHTY   55.000000E-09 
+      TPLHMX  110.000000E-09 
+      TPHLMN   22.000000E-09 
+      TPHLTY   55.000000E-09 
+      TPHLMX  110.000000E-09 
+
+
+**** 05/31/05 18:12:33 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-1\lab-1-2\lab-1-2.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_4000UB       
+        DRVL    0             721            
+        DRVH    0             721            
+       AtoD1                 AtoD_4000UB     
+       AtoD2                 AtoD_4000UB_NX  
+       AtoD3                 AtoD_4000UB     
+       AtoD4                 AtoD_4000UB_NX  
+       DtoA1 DtoA_STM        DtoA_4000UB     
+       DtoA2 DtoA_STM        DtoA_4000UB     
+       DtoA3 DtoA_STM        DtoA_4000UB     
+       DtoA4 DtoA_STM        DtoA_4000UB     
+    DIGPOWER                 CD4000_PWR      
+      TSWHL1                    6.940000E-09 
+      TSWHL2                    6.520000E-09 
+      TSWHL3                    9.470000E-09 
+      TSWHL4                    9.000000E-09 
+      TSWLH1                    8.490000E-09 
+      TSWLH2                    8.830000E-09 
+      TSWLH3                   11.760000E-09 
+      TSWLH4                   11.240000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

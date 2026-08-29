@@ -1,0 +1,18 @@
+* H:\Lab-10\lab-10-1\lab-10-1.stl written on Mon May 30 01:04:43 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! CLK Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 400ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS CLK STIM (1, 1) ;! CLOCK 10Hz 0.5 0 0
++   +0s 0
++   +50ms 1
++   Repeat Forever
++      +50ms 0
++      +50ms 1
++   EndRepeat

@@ -1,0 +1,24 @@
+* H:\Lab-4\lab-4-3\lab-4-3.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 28 11:44:07 2005
+
+
+
+** Analysis setup **
+.tran 1ms 8ms
+.OP 
+.STMLIB "lab-4-3.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-4-3.net"
+.INC "lab-4-3.als"
+
+
+.probe
+
+
+.END

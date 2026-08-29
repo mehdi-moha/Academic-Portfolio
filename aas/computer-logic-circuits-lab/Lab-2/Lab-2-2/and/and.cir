@@ -1,0 +1,24 @@
+* H:\Lab-2\Lab-2-2\and\and.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Fri May 27 13:57:17 2005
+
+
+
+** Analysis setup **
+.tran 1ms 8ms
+.OP 
+.STMLIB "and.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "and.net"
+.INC "and.als"
+
+
+.probe
+
+
+.END

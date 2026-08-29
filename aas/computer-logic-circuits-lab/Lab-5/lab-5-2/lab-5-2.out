@@ -1,0 +1,197 @@
+
+**** 05/28/05 19:31:46 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-5\lab-5-2\lab-5-2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sat May 28 07:15:42 2005
+
+
+
+** Analysis setup **
+.tran 1ms 8ms
+.OP 
+.STMLIB "H:\Lab-5\lab-5-2\lab-5-2.stl"
+
+
+* From [PSPICE NETLIST] section of pspice91.ini:
+.lib "nom.lib"
+
+.INC "lab-5-2.net"
+
+**** INCLUDING lab-5-2.net ****
+* Schematics Netlist *
+
+
+
+X_U3A         Cin $N_0001 $N_0002 $G_DPWR $G_DGND 7400 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1A         A0 A1 $N_0001 $G_DPWR $G_DGND 7486 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U2A         Cin $N_0001 SUM $G_DPWR $G_DGND 7486 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U4A         $N_0002 $N_0003 Co $G_DPWR $G_DGND 7400 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,0) $G_DPWR $G_DGND A0 IO_STM STIMULUS=A0
+U_DSTM2         STIM(1,0) $G_DPWR $G_DGND A1 IO_STM STIMULUS=A1
+U_DSTM3         STIM(1,0) $G_DPWR $G_DGND Cin IO_STM STIMULUS=Cin
+X_U5A         A0 A1 $N_0003 $G_DPWR $G_DGND 7400 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING lab-5-2.cir ****
+.INC "lab-5-2.als"
+
+
+
+**** INCLUDING lab-5-2.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U3A           U3A(A=Cin B=$N_0001 Y=$N_0002 PWR=$G_DPWR GND=$G_DGND )
+X_U1A           U1A(A=A0 B=A1 Y=$N_0001 PWR=$G_DPWR GND=$G_DGND )
+X_U2A           U2A(A=Cin B=$N_0001 Y=SUM PWR=$G_DPWR GND=$G_DGND )
+X_U4A           U4A(A=$N_0002 B=$N_0003 Y=Co PWR=$G_DPWR GND=$G_DGND )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND OUT0=A0 )
+U_DSTM2          DSTM2(PWR=$G_DPWR GND=$G_DGND OUT0=A1 )
+U_DSTM3          DSTM3(PWR=$G_DPWR GND=$G_DGND OUT0=Cin )
+X_U5A           U5A(A=A0 B=A1 Y=$N_0003 PWR=$G_DPWR GND=$G_DGND )
+_    _(Cin=Cin)
+_    _(A0=A0)
+_    _(A1=A1)
+_    _(SUM=SUM)
+_    _(Co=Co)
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+.ENDALIASES
+
+
+**** RESUMING lab-5-2.cir ****
+.probe
+
+
+.END
+
+* H:\Lab-5\lab-5-2\lab-5-2.stl written on Sat May 28 07:13:00 2005
+* by Stimulus Editor -- Serial Number: 251265024 -- Version 9.1
+;!Stimulus Get
+;! A0 Digital A1 Digital Cin Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 8ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS A0 STIM (1, 1)
++   +0s 0
++   1ms 1
++   2ms 0
++   3ms 1
++   4ms 0
++   5ms 1
++   6ms 0
++   7ms 1
+.STIMULUS A1 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+.STIMULUS Cin STIM (1, 1)
++   +0s 0
++   3.999999999999ms 1
+.STIMULUS A0 STIM (1, 1)
++   +0s 0
++   1ms 1
++   2ms 0
++   3ms 1
++   4ms 0
++   5ms 1
++   6ms 0
++   7ms 1
+.STIMULUS A1 STIM (1, 1)
++   +0s 0
++   2ms 1
++   4ms 0
++   6ms 1
+
+**** 05/28/05 19:31:46 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-5\lab-5-2\lab-5-2.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_00            D_86_1          D_86_2          D_86_3          
+      TPLHMN    4.400000E-09    3.600000E-09    4.800000E-09    2.400000E-09 
+      TPLHTY   11.000000E-09    9.000000E-09   12.000000E-09    6.000000E-09 
+      TPLHMX   22.000000E-09   17.000000E-09   24.000000E-09    6.000000E-09 
+      TPHLMN    2.800000E-09    2.000000E-09    2.800000E-09    2.400000E-09 
+      TPHLTY    7.000000E-09    5.000000E-09    7.000000E-09    6.000000E-09 
+      TPHLMX   15.000000E-09   11.000000E-09   16.000000E-09    6.000000E-09 
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 05/28/05 19:31:46 ********* PSpice 9.1 (Nov 1999) ******** ID# 251265024 
+
+ * H:\Lab-5\lab-5-2\lab-5-2.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.511000E-09 
+      TSWHL2                    1.487000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.517000E-09 
+      TSWLH2                    3.564000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .08
+
